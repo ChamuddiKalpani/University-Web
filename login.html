@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in – Northfield University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #4a1d82;
+    --purple-soft: #63369a;
+    --paper: #faf8fc;
+    --ink: #2a2037;
+    --muted: #6e647b;
+    --line: #e1d9eb;
+    --orange: #fdb022;
+    --error: #b3261e;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: minmax(320px, 5fr) 6fr;
+  }
+
+  /* Left panel */
+  .brand {
+    background: linear-gradient(rgba(39, 15, 70, 0.73), rgba(39, 15, 70, 0.78)), url("images/Uni.jpg") center/cover no-repeat;
+    color: #f7f1ff;
+    padding: 56px 56px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .brand::after {
+    content: "";
+    position: absolute;
+    inset: auto -120px -160px auto;
+    width: 420px; height: 420px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 50%;
+    box-shadow: 0 0 0 40px rgba(255,255,255,.03), 0 0 0 80px rgba(255,255,255,.02);
+  }
+  .crest { display: flex; align-items: center; gap: 14px; }
+  .crest svg { width: 44px; height: 44px; flex: none; }
+  .crest span { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; letter-spacing: .01em; }
+  .brand h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 3.4vw, 3.1rem);
+    line-height: 1.12;
+    max-width: 14ch;
+  }
+  .brand p { margin-top: 16px; color: #e1d3f0; max-width: 36ch; line-height: 1.55; }
+  .brand-visual {
+    display: none;
+  }
+  .brand small { color: #c7b4dd; font-size: .8rem; }
+
+  /* Right panel */
+  main { display: grid; place-items: center; padding: 40px 24px; }
+  .card { width: 100%; max-width: 400px; }
+  .home-link { display: inline-block; margin-bottom: 20px; font-size: .9rem; }
+  .card h2 { font-family: var(--serif); font-size: 2rem; font-weight: 600; }
+  .card > p { color: var(--muted); margin: 6px 0 28px; }
+
+  .roles {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 3px;
+    margin-bottom: 24px;
+    background: #fff;
+  }
+  .roles button {
+    font: inherit; font-weight: 500;
+    padding: 9px 0;
+    border: 0; border-radius: 6px;
+    background: transparent; color: var(--muted);
+    cursor: pointer;
+  }
+  .roles button[aria-pressed="true"] { background: var(--purple); color: #fff; }
+
+  label { display: block; font-weight: 500; font-size: .9rem; margin-bottom: 6px; }
+  .field { margin-bottom: 18px; }
+  .input-wrap { position: relative; }
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    font: inherit;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+  }
+  input::placeholder { color: #98a3a1; }
+  input[aria-invalid="true"] { border-color: var(--error); }
+  .toggle {
+    position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+    border: 0; background: none; font: inherit; font-size: .85rem;
+    color: var(--purple-soft); padding: 6px 8px; cursor: pointer; border-radius: 6px;
+  }
+  .error { color: var(--error); font-size: .85rem; margin-top: 6px; min-height: 1em; }
+
+  .row { display: flex; justify-content: space-between; align-items: center; margin: 4px 0 24px; font-size: .9rem; }
+  .row label { display: flex; align-items: center; gap: 8px; font-weight: 400; margin: 0; }
+  a { color: var(--purple-soft); }
+
+  .submit {
+    width: 100%;
+    font: inherit; font-weight: 600;
+    padding: 13px;
+    border: 0; border-radius: 8px;
+    background: var(--purple); color: #fff;
+    cursor: pointer;
+  }
+  .submit:hover { background: var(--purple-soft); }
+  .help { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: .88rem; color: var(--muted); }
+
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+  @media (max-width: 800px) {
+    body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+    .brand { padding: 28px 24px; }
+    .brand h1, .brand p, .brand small, .brand::after { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<aside class="brand">
+  <div class="crest">
+    <!-- Replace this with your university logo -->
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="9" r="6" fill="#fdb022"/>
+      <circle cx="9" cy="21" r="6" fill="#fdb022"/>
+      <circle cx="23" cy="21" r="6" fill="#fdb022"/>
+    </svg>
+    <span>Northfield University</span>
+  </div>
+  <div>
+    <h1>Shaping Minds Building Futures</h1>
+    <p>Sign in to check timetables, submit assignments, view results and pay fees.</p>
+  </div>
+  <small>&copy; 2026 Northfield University</small>
+</aside>
+
+<main>
+  <div class="card">
+    <a class="home-link" href="home.html">← Back to Home</a>
+    <h2>Sign in</h2>
+    <p>Use your university account.</p>
+
+    <div class="roles" role="group" aria-label="Account type">
+      <button type="button" aria-pressed="true" data-role="student">Student</button>
+      <button type="button" aria-pressed="false" data-role="staff">Staff</button>
+    </div>
+
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="userId" id="idLabel">Student ID or email</label>
+        <input type="text" id="userId" name="userId" autocomplete="username" placeholder="e.g. 20260123" required>
+        <div class="error" id="idError" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <div class="input-wrap">
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+          <button type="button" class="toggle" id="toggle" aria-label="Show password">Show</button>
+        </div>
+        <div class="error" id="pwError" role="alert"></div>
+      </div>
+
+      <div class="row">
+        <label><input type="checkbox" name="remember"> Keep me signed in</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="submit">Sign in</button>
+    </form>
+
+    <p class="help">New student? <a href="#">Activate your account</a><br>Need help? <a href="#">Contact IT support</a></p>
+  </div>
+</main>
+
+<script>
+  const form = document.getElementById('loginForm');
+  const userId = document.getElementById('userId');
+  const password = document.getElementById('password');
+  const idError = document.getElementById('idError');
+  const pwError = document.getElementById('pwError');
+  const toggle = document.getElementById('toggle');
+  const idLabel = document.getElementById('idLabel');
+  let role = 'student';
+
+  // Student / Staff switch
+  document.querySelectorAll('.roles button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      role = btn.dataset.role;
+      document.querySelectorAll('.roles button').forEach(b => b.setAttribute('aria-pressed', b === btn));
+      idLabel.textContent = role === 'student' ? 'Student ID or email' : 'Staff ID or email';
+      userId.placeholder = role === 'student' ? 'e.g. 20260123' : 'e.g. j.perera@northfield.edu';
+    });
+  });
+
+  // Show / hide password
+  toggle.addEventListener('click', () => {
+    const show = password.type === 'password';
+    password.type = show ? 'text' : 'password';
+    toggle.textContent = show ? 'Hide' : 'Show';
+    toggle.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+  });
+
+  // Validation
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let ok = true;
+
+    if (!userId.value.trim()) {
+      idError.textContent = 'Enter your ID or email.';
+      userId.setAttribute('aria-invalid', 'true');
+      ok = false;
+    } else {
+      idError.textContent = '';
+      userId.removeAttribute('aria-invalid');
+    }
+
+    if (password.value.length < 8) {
+      pwError.textContent = 'Password must be at least 8 characters.';
+      password.setAttribute('aria-invalid', 'true');
+      ok = false;
+    } else {
+      pwError.textContent = '';
+      password.removeAttribute('aria-invalid');
+    }
+
+    if (!ok) return;
+
+    window.location.href = 'home.html';
+  });
+</script>
+</body>
+</html>

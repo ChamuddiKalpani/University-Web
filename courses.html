@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Courses – Northfield University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css">
+<script src="courses.js" defer></script>
+</head>
+<body>
+
+<header class="nav">
+  <a href="home.html" class="logo">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <circle cx="16" cy="9" r="6" fill="#fdb022"/>
+      <circle cx="9" cy="21" r="6" fill="#fdb022"/>
+      <circle cx="23" cy="21" r="6" fill="#fdb022"/>
+    </svg>
+    <span>Logo</span>
+  </a>
+
+  <nav class="links" aria-label="Main">
+    <a href="home.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="courses.html" aria-current="page">Courses</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <form class="search" role="search">
+    <input type="search" placeholder="Search" aria-label="Search">
+    <button type="submit" aria-label="Search">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#4a1d82" stroke-width="2.5" stroke-linecap="round">
+        <circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>
+      </svg>
+    </button>
+  </form>
+</header>
+
+<main>
+  <section class="courses-hero">
+    <div class="courses-hero-content">
+      <p class="courses-eyebrow">LEARN · GROW · LEAD</p>
+      <h1>Find your next <span>course</span></h1>
+      <p>Discover career-focused learning paths and take the next step toward your future.</p>
+      <a href="#courseCatalog" class="btn course-hero-button">Explore courses</a>
+    </div>
+    <div class="courses-hero-note"><strong>16</strong><span>courses to explore</span></div>
+  </section>
+
+  <section class="course-catalog" id="courseCatalog" aria-label="Available courses">
+    <div class="course-heading">
+      <div>
+        <p class="courses-eyebrow">NORTHFIELD UNIVERSITY</p>
+        <h2>Explore our courses</h2>
+      </div>
+      <p class="course-count" id="courseCount" aria-live="polite">16 courses</p>
+    </div>
+
+    <div class="course-toolbar">
+      <div class="course-filters" role="group" aria-label="Filter courses by subject">
+        <button type="button" class="filter-chip" data-filter="all" aria-pressed="true">All courses</button>
+        <button type="button" class="filter-chip" data-filter="technology" aria-pressed="false">Technology</button>
+        <button type="button" class="filter-chip" data-filter="business" aria-pressed="false">Business</button>
+        <button type="button" class="filter-chip" data-filter="hospitality" aria-pressed="false">Hospitality</button>
+        <button type="button" class="filter-chip" data-filter="aviation" aria-pressed="false">Aviation</button>
+        <button type="button" class="filter-chip" data-filter="law" aria-pressed="false">Law</button>
+        <button type="button" class="filter-chip" data-filter="health" aria-pressed="false">Health</button>
+        <button type="button" class="filter-chip" data-filter="engineering" aria-pressed="false">Engineering</button>
+        <button type="button" class="filter-chip" data-filter="education" aria-pressed="false">Education</button>
+      </div>
+      <label class="course-search">
+        <span class="visually-hidden">Search courses</span>
+        <input id="courseSearch" type="search" placeholder="Search courses">
+      </label>
+    </div>
+
+    <div class="course-grid" id="courseGrid">
+      <article class="course-card" data-category="technology">
+        <img src="images/course-computing.jpg" alt="Close-up of a computer circuit board" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Technology</span>
+          <h3>Computing &amp; IT</h3>
+          <p>Learn programming, software development and the technologies behind today's digital world.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="business">
+        <img src="images/course-business.jpg" alt="Business analytics displayed on a laptop" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Business</span>
+          <h3>Business &amp; Management</h3>
+          <p>Build skills in business, leadership, marketing and managing projects in a changing workplace.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="education">
+        <img src="images/course-education-study.png" alt="Students studying together in a library" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Education</span>
+          <h3>Education &amp; Teaching</h3>
+          <p>Explore teaching practice, learning design and ways to support students in their education.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="hospitality">
+        <img src="images/course-hospitality-service.png" alt="Hospitality professional assisting guests in a restaurant" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Hospitality</span>
+          <h3>Hotel Operations</h3>
+          <p>Learn the practical skills involved in guest services and day-to-day hotel operations.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="hospitality">
+        <img src="images/course-hospitality-team.png" alt="Hotel hospitality team welcoming guests" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Hospitality</span>
+          <h3>Hospitality</h3>
+          <p>Build service, communication and operations skills for the hospitality industry.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="aviation">
+        <img src="images/course-aviation-team.png" alt="Aviation staff inspecting an aircraft at sunset" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Aviation</span>
+          <h3>Aviation</h3>
+          <p>Explore aviation fundamentals, airport operations and the wider air transport industry.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="law">
+        <img src="images/course-law.jpg" alt="Statue of Lady Justice holding scales" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Law</span>
+          <h3>Law</h3>
+          <p>Study legal principles, justice systems and the foundations of legal practice.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="business">
+        <img src="images/course-business.jpg" alt="Business analytics displayed on a laptop" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Business</span>
+          <h3>Banking</h3>
+          <p>Learn about banking services, financial operations and responsible customer support.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="health">
+        <img src="images/course-nursing.png" alt="Nurse in uniform holding a patient chart" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Health</span>
+          <h3>Nursing</h3>
+          <p>Develop knowledge in patient care, health sciences and professional nursing practice.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="health">
+        <img src="images/course-health.jpg" alt="Healthcare professional using a digital device" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Health</span>
+          <h3>Biomedical Science</h3>
+          <p>Explore human biology, laboratory science and the science behind health and disease.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="engineering">
+        <img src="images/course-mechanical-workshop.png" alt="Mechanical engineering student operating workshop equipment" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Engineering</span>
+          <h3>Mechanical Engineering</h3>
+          <p>Study the design, materials and systems used to create and maintain mechanical devices.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="engineering">
+        <img src="images/course-engineering.jpg" alt="Engineers working at a construction site" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Engineering</span>
+          <h3>Civil Engineering</h3>
+          <p>Learn about the planning and design of buildings, roads and essential infrastructure.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="engineering">
+        <img src="images/course-mechanical-workshop.png" alt="Mechanical engineering student operating workshop equipment" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Engineering</span>
+          <h3>Mechatronics Engineering</h3>
+          <p>Combine mechanical, electronic and control systems to understand modern automation.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="aviation">
+        <img src="images/course-cabin-crew.png" alt="Airline cabin crew standing beside an aircraft" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Aviation</span>
+          <h3>Cabin Crew</h3>
+          <p>Build communication, passenger-service and aviation safety skills for cabin crew roles.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="hospitality">
+        <img src="images/course-hotel-reception.png" alt="Hotel receptionist welcoming a guest at the front desk" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Hospitality</span>
+          <h3>Hotel Management</h3>
+          <p>Develop skills in hotel leadership, guest experience and hospitality business management.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="course-card" data-category="hospitality">
+        <img src="images/course-hotel-school.png" alt="Hotel school students practicing culinary skills" loading="lazy">
+        <div class="course-card-content">
+          <span class="course-category">Hospitality</span>
+          <h3>Hotel School</h3>
+          <p>Explore practical training pathways in accommodation, food service and guest care.</p>
+          <a href="login.html">Explore course <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+    <p class="course-empty" id="courseEmpty" hidden>No courses match your search. Try another subject.</p>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to start learning?</h2>
+    <a href="login.html" class="btn solid">Log In</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Northfield University. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
